@@ -27,6 +27,7 @@ func Data(project string,zone string){
 	LoadBalancerData(project,computeService,ctx)
 	CloudStorageData(project,ctx)
 	CloudSQLData(project,c,ctx)
+	DiskData(project, zone, computeService,ctx)
 
 }
 
@@ -53,4 +54,11 @@ func CloudSQLData(project string,c *http.Client,ctx context.Context) {
 	CloudSQLList := client.GetCloudSQLInfo(project,c,ctx)
 	fmt.Println("list of Cloud SQL databases")
 	fmt.Println(CloudSQLList)
+}
+
+func DiskData(project string,zone string,computeService *compute.Service,ctx context.Context){
+	fmt.Println("Disks Data")
+	list := client.GetDiskList(project, zone, computeService,ctx)
+	fmt.Println("list of disks")
+	fmt.Println(list)
 }
