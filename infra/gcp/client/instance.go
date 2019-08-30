@@ -1,10 +1,10 @@
 package client
 
 import (
-	"fmt"
-	"golang.org/x/net/context"
-	"google.golang.org/api/compute/v1"
-	"log"
+"fmt"
+"golang.org/x/net/context"
+"google.golang.org/api/compute/v1"
+"log"
 )
 
 func GetInstanceList(project string,zone string,computeService *compute.Service,ctx context.Context)[]string {
@@ -20,4 +20,3 @@ func GetInstanceList(project string,zone string,computeService *compute.Service,
 	}
 	return list
 }
-
